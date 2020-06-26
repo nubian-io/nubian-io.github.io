@@ -1,0 +1,45 @@
+html {
+  font-family: proxima-nova,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgba(0,0,0,0.88);
+  color: #ffffff;
+  background: rgba(0,0,0,0.88) url("../images/crow-feathers@2x.png") scroll no-repeat 0 0;
+}
+
+
+/** Proxima **/
+.proxima-400 {
+  font-family: proxima-nova,sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.proxima-600 {
+  font-family: proxima-nova,sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.brand--container {
+  /** Layout **/
+  justify-content: flex-end;
+}
+
+.brand--logo {
+  /** Layout **/
+  align-content: center;
+  margin-right: 5%;
+  margin-top: 5%;
+
+  /** Styles **/
+  font-style: normal;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 10pt;
+}
