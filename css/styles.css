@@ -25,7 +25,7 @@ html {
   display: flex;
 }
 
-.brand--container {
+.brand {
   /** Layout **/
   justify-content: flex-end;
 }
