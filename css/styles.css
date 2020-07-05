@@ -45,11 +45,12 @@ html {
 }
 
 .brand--title {
+    color: #FFD482;
     display: block;
     font-style: normal;
     font-size: 0.85rem;
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 1pt;
-    margin-top: .5rem;
+    letter-spacing: 1.35pt;
+    margin-top: .35rem;
 }
