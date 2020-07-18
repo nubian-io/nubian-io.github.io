@@ -1,29 +1,27 @@
-'use strict';
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const del = require('del');
+var browserSync = require('browser-sync').create();
 
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    watch = require('gulp-sourcemaps'),
-    watch = require('gulp-watch');
+// Static Server + watching scss/html files
 
-sass.compiler = require('node-sass');
-
-gulp.task('sass', function () {
- return gulp.src('./sass/**/*.scss')
-  .pipe(sourcemaps.init())
-  .pipe(sass().on('error', sass.logError))
-  .pipe(sourcemaps.write())
-  .pipe(gulp.dest('./css'));
+gulp.task('styles', () => {
+    return gulp.src('sass/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./css/'))
+        .pipe(browserSync.stream());
 });
 
-gulp.task('sass:watch', function () {
-  gulp.watch('./sass/**/*.scss', ['sass']);
+gulp.task('clean', () => {
+    return del([
+        'css/styles.css',
+    ]);
 });
 
+gulp.task('watch', () => {
+    gulp.watch('sass/**/*.scss', (done) => {
+        gulp.series(['clean', 'styles'])(done);
+    });
+});
 
-
-function defaultTask(cb) {
-  // place code for your default task here
-  cb();
-}
-
-exports.default = defaultTask
+gulp.task('default', gulp.series(['clean', 'styles']));
