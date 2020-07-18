@@ -1,29 +1,30 @@
-'use strict';
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const browserSync = require('browser-sync').create();
+const sourcemaps = require('gulp-sourcemaps');
 
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    watch = require('gulp-sourcemaps'),
-    watch = require('gulp-watch');
-
-sass.compiler = require('node-sass');
-
-gulp.task('sass', function () {
- return gulp.src('./sass/**/*.scss')
-  .pipe(sourcemaps.init())
-  .pipe(sass().on('error', sass.logError))
-  .pipe(sourcemaps.write())
-  .pipe(gulp.dest('./css'));
-});
-
-gulp.task('sass:watch', function () {
-  gulp.watch('./sass/**/*.scss', ['sass']);
-});
-
-
-
-function defaultTask(cb) {
-  // place code for your default task here
-  cb();
+// compile scss into css
+function style() {
+    // 1. where is my scss file
+    return gulp.src('./scss/**/*.scss')
+        // 2. pass that file through sass compiler
+        .pipe(sass()).on('error', sass.logError)
+        // 3. where do I save the compiled CSS?
+        .pipe(gulp.dest('./css'))
+        // 4. stream changes to all browsers
+        .pipe(browserSync.stream());
 }
 
-exports.default = defaultTask
+function watch() {
+    browserSync.init({
+        server: {
+            baseDir: './'
+        }
+    });
+    gulp.watch('./scss/**/*.scss', style);
+    gulp.watch('./*.html').on('change', browserSync.reload);
+    gulp.watch('./js/**/*.js').on('change', browserSync.reload);
+}
+
+exports.style = style;
+exports.watch = watch;
