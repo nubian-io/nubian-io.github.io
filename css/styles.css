@@ -1,41 +1,102 @@
-body {
-  font: 100% proxima-nova, serif, sans-serif;
-  color: #333; }
-
 html {
-  font-family: proxima-nova, serif, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  background-color: rgba(0, 0, 0, 0.88);
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.88) url("../images/crow-feathers@2x.png") scroll no-repeat 0 0; }
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgba(0, 0, 0, 0.88);
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.88) url("../images/crow-feathers@2x.png") scroll no-repeat 0 0;
+}
+
 
 /** Proxima **/
-.proxima-400 {
-  font-family: proxima-nova,sans-serif;
-  font-weight: 600;
-  font-style: normal; }
 
-.proxima-600 {
-  font-family: proxima-nova,sans-serif;
-  font-weight: 600;
-  font-style: normal; }
+.proxima-400 {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.aglet-slab-400 {
+    font-family: aglet-slab, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.aglet-slab {
+    font-family: aglet-slab, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+h1 {
+    font-family: aglet-slab, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    line-height: 1.5rem;
+}
 
 .flex {
-  display: flex; }
+    display: flex;
+}
 
-.brand--container {
-  /** Layout **/
-  justify-content: flex-end; }
+.container {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.box {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 10% 0 0 10%;
+}
+
+.brand {
+    /** Layout **/
+    display: flex;
+    justify-content: flex-end;
+}
 
 .brand--logo {
-  /** Layout **/
-  align-content: center;
-  margin-right: 5%;
-  margin-top: 5%;
-  /** Styles **/
-  font-style: normal;
-  font-size: 1.5rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 10pt; }
+    /** Layout **/
+    align-content: center;
+    margin-right: 5%;
+    margin-top: 5%;
+    /** Styles **/
+    font-style: normal;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 10pt;
+}
+
+.brand--title {
+    color: #FFD482;
+    display: block;
+    font-style: normal;
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.35pt;
+    margin-top: .35rem;
+}
+
+.hero {
+    max-width: 50rem;
+}
+
+.hero--content {
+    justify-content: center;
+    flex-direction: row;
+}
+
+.hero--content p {
+    font-size: 1.25rem;
+    line-height: 2.25rem;
+}
